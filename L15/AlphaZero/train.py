@@ -13,9 +13,9 @@ from policy_value_net_pytorch import PolicyValueNet  # Pytorch
 class TrainPipeline():
     def __init__(self, init_model=None):
         # 设置棋盘和游戏的参数
-        self.board_width = 5
-        self.board_height = 5
-        self.n_in_row = 3
+        self.board_width = 10
+        self.board_height = 10
+        self.n_in_row = 5
         self.board = Board(width=self.board_width,
                            height=self.board_height,
                            n_in_row=self.n_in_row)
@@ -33,7 +33,7 @@ class TrainPipeline():
         self.epochs = 5  # num of train_steps for each update
         self.kl_targ = 0.02 # 早停检查
         self.check_freq = 50 # 每50次检查一次，策略价值网络是否更新
-        self.game_batch_num = 500 # 训练多少个epoch
+        self.game_batch_num = 2000 # 训练多少个epoch
         self.best_win_ratio = 0.0 # 当前最佳胜率，用他来判断是否有更好的模型
         # 弱AI（纯MCTS）模拟步数，用于给训练的策略AI提供对手
         self.pure_mcts_playout_num = 1000

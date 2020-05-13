@@ -38,7 +38,7 @@ class Human(object):
 def run():
     n = 5
     # 这里可以修改棋盘的大小，需要和AI Model的棋盘大小相等
-    width, height = 5, 5
+    width, height = 10, 10
     # 调用AI模型
     # model_file = 'best_policy.model'
     try:
